@@ -1,0 +1,22 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>Phishing Awareness Program</title>
+<style>
+body{font-family:Arial;margin:0;background:#f3f6fb;color:#172033}header{background:#183a70;color:white;padding:30px;text-align:center}
+main{max-width:900px;margin:auto;padding:20px}.card{background:white;padding:20px;margin:16px 0;border-radius:12px;box-shadow:0 3px 12px #0001}
+button{padding:10px;margin:5px;border:0;border-radius:7px;background:#3155d6;color:white;cursor:pointer}.option{display:block;width:100%;text-align:left;background:#eef2ff;color:#172033}
+.warn{border-left:5px solid #d33;padding:12px;background:#fff3f3}
+</style></head><body><header><h1>Phishing Awareness Program</h1><p>Learn to identify phishing and social-engineering attacks.</p></header><main>
+<div class="card"><h2>What is phishing?</h2><p>Phishing is a social-engineering attack that impersonates a trusted service to steal information or make a victim perform an unsafe action.</p></div>
+<div class="card"><h2>Suspicious email signs</h2><ul><li>Unexpected urgency or threats</li><li>Requests for passwords, OTPs or money</li><li>Look-alike sender domains</li><li>Unexpected attachments or links</li><li>Spelling or branding inconsistencies</li></ul></div>
+<div class="card"><h2>Fake login pages</h2><div class="warn">Check the domain carefully. Never enter credentials after following an unexpected login link. Open the service using a trusted address or bookmark.</div></div>
+<div class="card"><h2>Social engineering</h2><p>Common techniques include urgency, authority impersonation, fear, curiosity and fake rewards.</p></div>
+<div class="card"><h2>Case study</h2><p>An email says your account will be disabled in 30 minutes and asks you to verify your password. Do not click the link. Verify through the official service and report the message.</p></div>
+<div class="card"><h2>Quiz</h2><p id="q"></p><div id="o"></div><p id="r"></p><button onclick="next()">Next</button></div>
+</main><script>
+const q=[["Strong phishing warning sign?",["Normal newsletter","Urgent request for password through unknown link","Expected calendar invite"],1],
+["What should you do with an unexpected login link?",["Enter password","Forward it","Open the service through a trusted address"],2],
+["Fear and urgency are examples of?",["Social engineering","Compression","Encryption"],0]];
+let i=0,s=0;
+function draw(){document.getElementById("q").textContent=(i+1)+". "+q[i][0];let x=document.getElementById("o");x.innerHTML="";q[i][1].forEach((v,n)=>{let b=document.createElement("button");b.className="option";b.textContent=v;b.onclick=()=>{if(n==q[i][2]){s++;r.textContent="Correct!"}else r.textContent="Review the guidance above."};x.appendChild(b)});r.textContent=""}
+function next(){if(i<q.length-1){i++;draw()}else r.textContent="Quiz finished: "+s+"/"+q.length}draw();
+</script></body></html>
